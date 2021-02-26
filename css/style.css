@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background-color: #2da3f1;
+  overflow-y: hidden;
+}
+
+.app-header {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.app-header .app-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.app-header .app-title h1,
+.app-header .app-title i {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .app-header .app-title h1,
+  .app-header .app-title i {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header .app-title {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+
+.app-header .app-options {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 1.5rem;
+  padding-right: 30px;
+}
+
+.app-header .app-options .game-reset {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .app-header .app-options {
+    font-size: 1rem;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+  }
+}
+
+.app-header .app-options span + span {
+  margin-left: 10px;
+}
+
+.game {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  height: calc(100vh - 120px);
+}
+
+.game .card {
+  -webkit-perspective: 300px;
+          perspective: 300px;
+}
+
+.game .card__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.game .card__wrapper.is-flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.game .card__surface {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.game .card__surface--front > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  border: 5px dashed rgba(255, 255, 255, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game .card__surface--front > div i {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3rem;
+}
+
+.game .card__surface--back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game .card__surface--back img {
+  max-width: 30%;
+}
+
+@media (max-width: 576px) {
+  .game {
+    -ms-grid-columns: (minmax(200px, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    -ms-grid-rows: (minmax(200px, 1fr))[16];
+        grid-template-rows: repeat(16, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .game {
+    -ms-grid-columns: (minmax(200px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    -ms-grid-rows: (minmax(200px, 1fr))[8];
+        grid-template-rows: repeat(8, minmax(200px, 1fr));
+  }
+}
+/*# sourceMappingURL=style.css.map */
