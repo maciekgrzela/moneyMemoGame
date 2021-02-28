@@ -11,6 +11,12 @@ body {
   overflow-y: hidden;
 }
 
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+}
+
 .app-header {
   width: 100%;
   height: 80px;
@@ -77,12 +83,20 @@ body {
   padding-right: 30px;
 }
 
-.app-header .app-options .game-reset {
+.app-header .app-options .game-control {
   background-color: #000;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.app-header .app-options .game-control--hidden {
+  display: none;
+}
+
+.app-header .app-options .game-control--success {
+  background-color: #28a756;
 }
 
 @media (max-width: 768px) {
@@ -111,8 +125,8 @@ body {
 }
 
 .game .card {
-  -webkit-perspective: 300px;
-          perspective: 300px;
+  -webkit-perspective: 600px;
+          perspective: 600px;
 }
 
 .game .card__wrapper {
@@ -130,6 +144,21 @@ body {
 .game .card__wrapper.is-flipped {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+}
+
+.game .card__back-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 40px;
+  border: 5px dashed rgba(255, 255, 255, 0.5);
+  padding: 10px;
 }
 
 .game .card__surface {
@@ -198,5 +227,99 @@ body {
     -ms-grid-rows: (minmax(200px, 1fr))[8];
         grid-template-rows: repeat(8, minmax(200px, 1fr));
   }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  border: 1px solid #888;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal__title {
+  padding: 10px 20px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #2da3f1;
+}
+
+.modal__text {
+  color: #fff;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.modal__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.modal__image-win {
+  max-width: 250px;
+}
+
+.modal__close {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__close:hover, .modal__close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__your-result {
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.modal__game-reset {
+  margin-top: 30px;
+  background-color: #dc3545;
+  font-size: 18px;
+  padding: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */

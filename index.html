@@ -26,7 +26,11 @@
       </div>
       <nav class="app-options">
         <span>Your points: <span class="game-result">0</span></span>
-        <span class="game-reset">Reset Game</span>
+        <span class="game-control game-reset">Reset Game</span>
+        <span class="game-control game-control--hidden game-time"
+          >Time<span class="game-timer"></span
+        ></span>
+        <span class="game-control game-control--success start-game">Start</span>
       </nav>
     </header>
     <div class="game">
@@ -220,6 +224,21 @@
           <div class="card__surface card__surface--back">
             <div class="card__back-content"></div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal__content">
+        <div class="modal__title">
+          <h1 class="modal__text">Koniec gry :(</h1>
+          <span class="modal__close">&times;</span>
+        </div>
+        <div class="modal__body">
+          <img class="modal__image-win" src="/assets/img/one.png" alt="Win" />
+          <h1 class="modal__your-result">
+            Twój wynik: <span class="modal__game-result"></span>
+          </h1>
+          <button class="modal__game-reset">Ja chcę jeszcze raz!</button>
         </div>
       </div>
     </div>
